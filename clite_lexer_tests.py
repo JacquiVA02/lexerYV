@@ -65,10 +65,10 @@ class TestFloats(unittest.TestCase):
         self.lexer.token()  # consumes "1.5"
         self.assertRaises(lex.LexError, self.lexer.token)
 
-    # def test_wrong_floats_4(self):
-    #     self.lexer.input('1.5e_1')
-    #     self.lexer.token()
-    #     self.assertRaises(lex.LexError, self.lexer.token)
+    def test_wrong_floats_4(self):
+        self.lexer.input('1.5e_1')
+        self.lexer.token()
+        self.assertRaises(lex.LexError, self.lexer.token)
 
 if __name__ == '__main__':
     unittest.main(TestFloats())
